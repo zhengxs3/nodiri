@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nodiri App</title>
+  <style>
+    * {
+        box-sizing: border-box;
+      }
+
+    html, body {
+      margin: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      color: #388AA8;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .bg-orange {
+      background-color: #E6770F;
+    }
+
+    .bg-blue {
+      background-color: #388AA8 ;
+    }
+    .c-orange {
+      color: #E6770F;
+    }
+
+    .c-blue {
+      color: #388AA8;
+    }
+
+    .c-white {
+      color: #FFFFFF;
+    }
+
+    .flex{
+      display: flex;
+    }
+    .hero {
+      position: relative;
+      text-align: center;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-shadow: 1px 1px 3px #000;
+      width: 100%;
+      max-width: 90%;
+      box-sizing: border-box;
+    }
+
+    .hero-text img {
+      max-width: 220px;
+      margin-bottom: 10px;
+    }
+
+    .hero-text p {
+      max-width: 340px;
+      margin: 0 auto;
+      font-size: 1.1em;
+      line-height: 1.4em;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 24px;
+      border: 2px solid white;
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: white;
+      color: #00789e;
+    }
+
+    .presentation {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .presentation p{
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+
+    .qui {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .wrap div {
+      width: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+    .propose {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+
+    .grid-item {
+      padding: 40px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 140px;
+    }
+
+    .team {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .team h2 {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+
+    .team-slider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .arrow {
+      font-size: 2rem;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px;
+    }
+
+    .team-member {
+      text-align: center;
+    }
+
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .team-member .name {
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: #00789e;
+      color: white;
+      padding: 30px 20px 10px;
+      font-size: 0.9em;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    .footer-logo {
+      width: 100px;
+    }
+
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .footer-right a,
+    .footer-right p {
+      color: white;
+      margin: 0;
+      text-decoration: none;
+    }
+
+
+    .footer-right a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-contact {
+      font-weight: bold;
+    }
+
+    .footer-line {
+      border: none;
+      border-top: 1px solid white;
+      margin: 10px 0;
+    }
+
+    .footer-bottom {
+      text-align: right;
+      font-size: 0.8em;
+    }
+
+    @media (max-width: 431px) {
+      h2 {
+        color: #388AA8;
+        padding-left: 60px;
+        padding-right: 60px;
+      }
+
+      .team h2 {
+        padding-left: 80px;
+        padding-right: 80px;
+      }
+
+      .presentation p{
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <img src="img/Group 170.png" alt="Enfant autiste jouant" class="hero-image" />
+    <div class="hero-text">
+      <img src="img/Group 18.png" alt="Logo Nodiri">
+      <p>Une application pour accompagner les enfants autistes au quotidien</p>
+      <a href="#" class="download-btn">Télécharger</a>
+    </div>
+  </section>
+
+  <section class="presentation">
+    <h2>Présentation de l’application</h2>
+    <p>
+      Nodiri est une application pensée pour accompagner les enfants autistes dans leur quotidien, tout en offrant un véritable soutien aux familles, aux professionnels de la santé et de l'éducation.
+    </p>
+    <p>
+      Simple, intuitive et évolutive, l’application s’adapte à l’âge, aux besoins et au rythme de chaque enfant. Elle propose un environnement sécurisé, positif et stimulant, où l’on peut apprendre, s’exprimer, grandir... à son propre rythme.
+    </p>
+    <p class="c-orange bold">
+      Nodiri est disponible pour seulement 9,99 € sur l’App Store et Google Play !
+    </p>
+  </section>
+
+  <section class="qui">
+    <h2 class="c-388AA8">À qui s’adresse l’application ?</h2>
+    <div class="wrap">
+      <div>
+        <img src="img/Group 29.svg" alt="Enfants autistes">
+        <p>Aux enfants autistes</p>
+      </div>
+      <div>
+        <img src="img/Group 30.svg" alt="Parents">
+        <p>Aux parents</p>
+      </div>
+      <div>
+        <img src="img/Group 31.svg" alt="Professionnels de la santé">
+        <p>Aux professionnels de la santé</p>
+      </div>
+      <div>
+        <img src="img/Group 32.svg" alt="Professionnels de l’éducation">
+        <p>Aux professionnels de l’éducation</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="propose">
+    <h2>Que propose l’application ?</h2>
+    <div class="grid">
+      <div class="grid-item bg-orange c-white">Des routines visuelles pour favoriser l’autonomie au quotidien</div>
+      <div class="grid-item c-blue">Des défis ludiques et progressifs pour encourager les apprentissages</div>
+      <div class="grid-item c-orange">Un espace d’apprentissage adapté aux besoins scolaires</div>
+      <div class="grid-item bg-blue c-white">Un réseau social sécurisé pour développer les interactions sociales</div>
+      <div class="grid-item bg-orange c-white">Un forum privé pour les parents et professionnels, dédié à l’échange</div>
+      <div class="grid-item c-blue">Un outil de suivi pour accompagner les progrès de chaque enfant</div>
+    </div>
+  </section>
+
+  <section class="team">
+    <h2>Qui sommes nous ?</h2>
+    <div class="team-slider">
+      <div class="arrow">&#10094;</div>
+      <div class="team-member">
+        <img src="img/chloe.png" alt="Chloé David">
+        <div class="c-blue bold">Chloé David</div>
+        <div>Chef de projet</div>
+      </div>
+      <div class="team-member">
+        <img src="img/meigan.png" alt="Meigan Pok">
+        <div class="c-orange bold">Meigan Pok</div>
+        <div>Marketing</div>
+      </div>
+      <div class="arrow">&#10095;</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <img src="img/Group 18.png" alt="Logo Nodiri" class="footer-logo">
+        <p>Une application pour accompagner<br>les enfants autistes au quotidien</p>
+      </div>
+      <div class="footer-right">
+        <div class="c-white flex ">
+          <a href="#">Télécharger l’application</a>
+          <a href="#">Mentions légales</a>
+        </div>
+        
+        <p class="footer-contact">contact.nodiri@gmail.com</p>
+      </div>
+    </div>
+    <hr class="footer-line">
+    <div class="footer-bottom">© 2025 Nodiri. Tous droits réservés.</div>
+  </footer>
+
+</body>
+</html>
